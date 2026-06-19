@@ -4,7 +4,7 @@ import model.armi.abs.AbstractGun;
 
 public class ShotGun extends AbstractGun {
 
-    protected ShotGun(String n, int d) {
+    public ShotGun(String n, int d) {
         super(n, d);
     }
 

@@ -3,7 +3,7 @@ package model.armi.cls;
 import model.armi.abs.AbstractGun;
 
 public class SimpleGun extends AbstractGun {
-    protected SimpleGun(String n, int d) {
+    public SimpleGun(String n, int d) {
         super(n, d);
     }
 
