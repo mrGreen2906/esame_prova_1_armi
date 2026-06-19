@@ -11,9 +11,8 @@ public class Inventory extends ArrayList<ArmiInt> {
     static Inventory istanza = null;
     public static Inventory getInventario(){
         if(istanza == null)
-            return new Inventory();
-        else
-            return istanza;
+            istanza =  new Inventory();
+        return istanza;
     }
 
     private Inventory(){
