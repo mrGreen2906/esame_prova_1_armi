@@ -17,4 +17,9 @@ public class Bersaglio implements BersagliInt {
     public int getVita() {
         return this.vitaAttuale;
     }
+
+    public void applicaDanni(int danno){
+        this.vitaAttuale-=danno;
+    }
+    public boolean isDead() { return vitaAttuale<=0;}
 }

@@ -2,6 +2,10 @@ package model.armi.abs;
 
 import model.armi.ArmiInt;
 import model.armi.ArmiTipoEnum;
+import model.bersagli.BersagliInt;
+import model.exceptions.BersaglioLontano;
+import model.exceptions.NoBersaglio;
+import model.exceptions.NoMunizioni;
 
 public abstract class AbstractArma implements ArmiInt {
     final String name;
@@ -22,7 +26,18 @@ public abstract class AbstractArma implements ArmiInt {
     public String getDamage(){ return this.danno + "x"+ this.getColpiVolta();}
     public boolean hasNoAmmo() {return this.caricatore==0;}
     public final void reload(){this.caricatore= CARICATORE_MAX;}
+    public ArmiTipoEnum getAte(){ return this.tipo; }
+
 
     protected abstract int getColpiVolta();
     protected abstract int getPortata();
+    public final void shoot(BersagliInt b) throws NoMunizioni, BersaglioLontano {
+        if(this.caricatore<this.numColpi)
+            throw new NoMunizioni();
+        this.caricatore-= this.numColpi;
+        if(this.getPortata()<b.getDistanza())
+            throw new BersaglioLontano();
+
+        b.applicaDanni(this.numColpi*this.danno);
+    }
 }
