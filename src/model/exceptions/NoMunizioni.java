@@ -1,5 +1,5 @@
 package model.exceptions;
 
-public class NoMunizioni extends Exception {
+public class NoMunizioni extends ShootingException {
 
 }

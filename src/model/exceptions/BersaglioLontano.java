@@ -1,5 +1,5 @@
 package model.exceptions;
 
-public class BersaglioLontano extends Exception {
+public class BersaglioLontano extends ShootingException {
 
 }

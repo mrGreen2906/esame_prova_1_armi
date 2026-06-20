@@ -4,6 +4,7 @@ package view;
 import controller.ArmaCentralController;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
@@ -40,11 +41,12 @@ public class ArmaCentralView extends VBox {
 
         s.getChildren().add(r);
         s.getChildren().add(v);
+        s.addEventHandler(MouseEvent.MOUSE_CLICKED, event->{c.shoot();});
         this.getChildren().add(s);
         this.getChildren().add(b);
         this.setAlignment(Pos.CENTER);
     }
 
-    public void setAmmo(String s){}
+    public void setAmmo(String s){ this.t3.setText(s);}
 
 }

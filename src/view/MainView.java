@@ -4,11 +4,14 @@ import com.sun.tools.javac.Main;
 import controller.ArmaCentralController;
 import controller.BersaglioController;
 import controller.InventarioController;
+import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import model.bersagli.BersaglioFactory;
+
+import model.exceptions.NoBersaglio;
 
 
 public class MainView extends BorderPane {
@@ -89,5 +92,12 @@ public class MainView extends BorderPane {
             this.box.getChildren().add(this.b.getView());
         this.setCenter(this.box);
     }
+
+    public BersaglioController getBersaglioController() throws NoBersaglio {
+        if(this.b==null)
+            throw new NoBersaglio();
+        return b;
+    }
+    public InventarioController getIc() { return ic; }
 
 }
