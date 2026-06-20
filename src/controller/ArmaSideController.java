@@ -10,7 +10,7 @@ public class ArmaSideController {
 
     public ArmiInt getM() {  return m;}
 
-    public ArmaSideView getV() {  return v;}
+    public ArmaSideView getView() {  return v;}
 
     public ArmaSideController(ArmiInt a){
         this.m=a;
@@ -18,8 +18,8 @@ public class ArmaSideController {
     }
 
     public void seleziona(){
-        ArmaCentralController acc = new ArmaCentralController(this.m);
-        MainView.getIstance().set
+        ArmaCentralController a = new ArmaCentralController(this.m);
+MainView.getInstance().setArmaCentrale(a);
     }
 
     public void aggiornaVistaArma(){
